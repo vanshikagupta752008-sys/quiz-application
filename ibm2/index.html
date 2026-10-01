@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quiz Application</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ===== WELCOME SCREEN ===== -->
+  <div class="screen" id="welcome-screen">
+    <div class="card welcome-card">
+      <div class="welcome-icon">🧠</div>
+      <h1 class="welcome-title">General Knowledge Quiz</h1>
+      <p class="welcome-subtitle">Test your knowledge across science, history, geography, and more!</p>
+      <ul class="welcome-info">
+        <li>📋 10 multiple-choice questions</li>
+        <li>✅ One correct answer per question</li>
+        <li>🔁 Navigate freely between questions</li>
+        <li>📊 Instant score &amp; explanations at the end</li>
+      </ul>
+      <button class="btn btn-primary btn-large" id="start-btn">Start Quiz</button>
+    </div>
+  </div>
+
+  <!-- ===== QUIZ SCREEN ===== -->
+  <div class="screen hidden" id="quiz-screen">
+    <div class="card quiz-card">
+
+      <!-- Header: question counter + progress bar -->
+      <div class="quiz-header">
+        <span class="question-counter" id="question-counter">Question 1 of 10</span>
+        <span class="score-live" id="score-live">Score: 0</span>
+      </div>
+      <div class="progress-bar-wrapper">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <!-- Question -->
+      <div class="question-block">
+        <p class="question-number" id="question-number">Q1</p>
+        <p class="question-text" id="question-text"></p>
+      </div>
+
+      <!-- Options -->
+      <div class="options-grid" id="options-grid"></div>
+
+      <!-- Validation message -->
+      <p class="validation-msg hidden" id="validation-msg">⚠️ Please select an answer before proceeding.</p>
+
+      <!-- Navigation -->
+      <div class="nav-buttons">
+        <button class="btn btn-secondary" id="prev-btn">← Previous</button>
+        <button class="btn btn-primary" id="next-btn">Next →</button>
+        <button class="btn btn-success hidden" id="submit-btn">Submit Quiz ✓</button>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== RESULTS SCREEN ===== -->
+  <div class="screen hidden" id="results-screen">
+    <div class="card results-card">
+
+      <div class="results-header">
+        <div class="results-icon" id="results-icon">🏆</div>
+        <h2 class="results-title">Quiz Complete!</h2>
+        <div class="score-summary">
+          <div class="score-box">
+            <span class="score-label">Score</span>
+            <span class="score-value" id="final-score">0 / 10</span>
+          </div>
+          <div class="score-box">
+            <span class="score-label">Percentage</span>
+            <span class="score-value" id="final-percentage">0%</span>
+          </div>
+          <div class="score-box">
+            <span class="score-label">Grade</span>
+            <span class="score-value" id="final-grade">F</span>
+          </div>
+        </div>
+        <p class="results-message" id="results-message"></p>
+      </div>
+
+      <!-- Detailed review -->
+      <div class="review-section">
+        <h3 class="review-title">Answer Review</h3>
+        <div id="review-list"></div>
+      </div>
+
+      <button class="btn btn-primary btn-large" id="restart-btn">🔄 Restart Quiz</button>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
